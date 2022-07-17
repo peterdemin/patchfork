@@ -1,0 +1,25 @@
+diff --git setup.py setup.py
+index 38738cb..308eaf5 100644
+--- setup.py
++++ setup.py
+@@ -43,10 +43,6 @@ if compile_test('bzlib.h', 'bz2'):
+     ARGS.append('-DHAVE_BZLIB')
+     LIBS.append('bz2')
+ 
+-if compile_test('lzma.h', 'lzma'):
+-    ARGS.append('-DHAVE_XZLIB')
+-    LIBS.append('lzma')
+-
+ ext_modules = [
+     Extension(name='kenlm',
+         sources=FILES + ['python/kenlm.cpp'],
+@@ -57,7 +53,8 @@ ext_modules = [
+ ]
+ 
+ setup(
+-    name='kenlm',
++    name='peterkenlm',
++    version='2022.06.30',
+     ext_modules=ext_modules,
+     include_package_data=True,
+ )
